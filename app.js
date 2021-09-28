@@ -47,7 +47,7 @@ function setColor(el) {
 
 }
 function removeColor(el) {
-    el.style.backgroundColor = squareBackgroundMain;
+    el.style.backgroundColor = 'black';
     el.style.boxShadow = `0 0 2px #000`;
 }
 
