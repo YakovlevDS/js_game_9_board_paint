@@ -36,22 +36,22 @@ for (let i = 0; i < squareTotal; i++) {
   square.style.height = `${squareSize}px`;
   square.style.margin = `${squareMargin}px`;
 
-  square.addEventListener("mouseover", () => setColor(square));
-  square.addEventListener("mouseleave", () => removeColor(square));
+  square.addEventListener("mouseover", setColor);
+  square.addEventListener("mouseleave", removeColor);
   board.append(square);
 }
-function setColor(el) {
-    const color = getRandomColor(); 
-    el.style.backgroundColor = color
-    el.style.boxShadow=`0 0 2px ${color}, 0 0 10px ${color}`;
+function setColor(e)  {
+  const el = e.target;
+   const getColor = () => colors[Math.floor(Math.random() * getRandomColor.length)];
+    el.style.backgroundColor = getColor;
+    el.style.boxShadow = `0 0 2px ${getColor}, 0 0 10px ${getColor}`;
 
 }
-function removeColor(el) {
-    el.style.backgroundColor = 'black';
-    el.style.boxShadow = `0 0 2px #000`;
-}
+function removeColor(e) {
+  const el = e.target;
+  el.style.backgroundColor = "black";
+  el.style.boxShadow = `0 0 2px #000`;
+};
 
-function getRandomColor() {
-    const index = Math.floor(Math.random() * colors.length);
-    return colors[index]
-}
+
+ 
