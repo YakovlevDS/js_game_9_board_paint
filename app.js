@@ -42,8 +42,8 @@ for (let i = 0; i < squareTotal; i++) {
 }
 function setColor(e)  {
   const el = e.target;
-   const getColor = () => colors[Math.floor(Math.random() * getRandomColor.length)];
-    el.style.backgroundColor = getColor;
+   const getColor = () => colors[Math.floor(Math.random() * colors.length)];
+    el.style.backgroundColor = getColor();
     el.style.boxShadow = `0 0 2px ${getColor}, 0 0 10px ${getColor}`;
 
 }
